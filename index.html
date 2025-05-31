@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legatti Électrique - Professional Electrical Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            /*background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');*/
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./img/legatti-logo-final.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .emergency-banner {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+            }
+        }
+
+        .map-container {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
+
+        .map-container iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+        .image-hover-zoom {
+            transition: transform 0.5s ease;
+        }
+
+        .image-hover-zoom:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
+                <h1 class="text-xl font-bold">Legatti Entreprise Électrique</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#services" class="hover:text-yellow-400 transition">Services</a>
+                <a href="#about" class="hover:text-yellow-400 transition">About Us</a>
+                <a href="#why-us" class="hover:text-yellow-400 transition">Why Choose Us</a>
+                <a href="#contact" class="hover:text-yellow-400 transition">Contact</a>
+            </nav>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Professional Residential Electrical Services</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Certified and reliable electrical solutions for homes
+                in Montreal and surrounding areas</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#contact"
+                    class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-6 rounded-lg transition duration-300">
+                    <i class="fas fa-phone-alt mr-2"></i> Quick Contact
+                </a>
+                <a href="#services"
+                    class="bg-transparent hover:bg-blue-800 border-2 border-white text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    <i class="fas fa-bolt mr-2"></i> Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner bg-red-600 text-white py-3 text-center">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-2">
+            <i class="fas fa-exclamation-triangle text-xl"></i>
+            <span class="font-bold">24/7 EMERGENCIES:</span>
+            <a href="tel:5147127930" class="hover:underline">514-712-7930</a>
+            <span>or</span>
+            <a href="tel:4388850597" class="hover:underline">438-885-0597</a>
+            <span>- Immediate response</span>
+        </div>
+    </div>
+
+    <!-- Quick Info -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg bg-gray-100 hover:shadow-lg transition">
+                    <i class="fas fa-check-circle text-4xl text-blue-900 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Guaranteed Work</h3>
+                    <p class="text-gray-700">Written warranty on all our work for your peace of mind.</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-gray-100 hover:shadow-lg transition">
+                    <i class="fas fa-clock text-4xl text-blue-900 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Quick Response</h3>
+                    <p class="text-gray-700">Fast and efficient service for all your electrical needs.</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-gray-100 hover:shadow-lg transition">
+                    <i class="fas fa-dollar-sign text-4xl text-blue-900 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Free Estimate</h3>
+                    <p class="text-gray-700">Transparent pricing with no-obligation quotes for your project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">About Us</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+                <div class="lg:w-1/2">
+                    <img src="./img/About-Us.png">
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Legatti Électrique</h3>
+                    <p class="text-gray-700 mb-4">With over 15 years of experience in residential electrical work, our
+                        team of certified and accredited technicians focuses on providing safe and customized solutions
+                        for homeowners.</p>
+                    <p class="text-gray-700 mb-6">Alexandre Léger and Jason Attie have been long-time partners in the
+                        electrical field. With several years of experience specializing in residential electrical
+                        systems and having overcome many challenges together, they decided to found their own company,
+                        Legatti Électrique. Our mission is to provide residential electrical services of the highest
+                        quality. We are committed to ensuring the safety and satisfaction of homeowners in every
+                        project.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-yellow-500 mr-2"></i>
+                            <span>Certified technicians</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-yellow-500 mr-2"></i>
+                            <span>Guaranteed safety</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-yellow-500 mr-2"></i>
+                            <span>Modern equipment</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-yellow-500 mr-2"></i>
+                            <span>Quality materials</span>
+                        </div>
+                    </div>
+                    <a href="#contact"
+                        class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        <i class="fas fa-envelope mr-2"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Residential Services</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+                <p class="text-gray-700 max-w-2xl mx-auto mt-4">We offer complete electrical solutions for homes,
+                    apartments, and residential properties.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div
+                    class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 transition duration-300">
+                    <div class="h-61 bg-blue-900 flex items-center justify-center overflow-hidden">
+                        <img src="./img/legatti-01-v3.png" alt="Residential electrical panel installation"
+                            class="w-full h-full object-cover image-hover-zoom">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Home Electrical Systems</h3>
+                        <p class="text-gray-700 mb-4">Complete electrical installations for homes, including new
+                            constructions, renovations and expansions.</p>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                <span>Electrical panel upgrades</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                <span>Whole-house rewiring</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                <span>Circuit breaker installations</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div
+                    class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 transition duration-300">
+                    <div class="h-61 bg-blue-900 flex items-center justify-center overflow-hidden">
+                        <img src="./img/legatti-02.png" alt="Residential lighting installation"
+                            class="w-full h-full object-cover image-hover-zoom">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Lighting Solutions</h3>
+                        <p class="text-gray-700 mb-4">Beautiful and efficient lighting installations to enhance your
+                            home's ambiance and functionality.</p>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                <span>LED lighting installations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                <span>Chandelier & fixture hanging</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                <span>Outdoor lighting</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div
+                    class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 transition duration-300">
+                    <div class="h-61 bg-blue-900 flex items-center justify-center overflow-hidden">
+                        <img src="./img/legatti-03.png" alt="Electrical outlet installation"
+                            class="w-full h-full object-cover image-hover-zoom">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Outlets & Switches</h3>
+                        <p class="text-gray-700 mb-4">Safe and code-compliant installation of all types of outlets and
+                            switches for your home.</p>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                <span>GFCI outlet installation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                <span>USB charging outlets</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                <span>Smart switches & dimmers</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full List Button -->
+            <div class="text-center mt-12">
+                <button id="showMoreBtn"
+                    class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    <i class="fas fa-list-ul mr-2"></i> View Complete Service List
+                </button>
+
+                <div id="fullServices" class="hidden mt-8 bg-gray-100 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">All Our Residential Services</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-blue-900 mb-2">Installations</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>Complete home electrical systems</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>Electrical panel upgrades</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>New construction wiring</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>Home additions & renovations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>Basement electrical work</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-blue-900 mb-2">Lighting</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>Interior lighting installation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>Exterior & landscape lighting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>Recessed lighting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>Chandelier & pendant lighting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>Smart lighting systems</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-blue-900 mb-2">Specialty Services</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>EV charging station installation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>Home automation systems</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>Generator hookups</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>Hot tub & pool wiring</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-500 mr-2 mt-1"></i>
+                                    <span>Appliance circuits</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Why Choose Legatti Électrique</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-user-shield text-blue-900 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900">Certified & Insured</h3>
+                    </div>
+                    <p class="text-gray-700">All our electricians are fully licensed and insured, giving you peace of
+                        mind that your home's electrical work is in professional hands. We carry comprehensive liability
+                        insurance and workers' compensation coverage.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-medal text-blue-900 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900">Quality Workmanship</h3>
+                    </div>
+                    <p class="text-gray-700">We take pride in our attention to detail and commitment to excellence.
+                        Every job is completed to the highest standards, using only premium materials and following all
+                        electrical codes and safety regulations.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-clock text-blue-900 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900">Prompt Service</h3>
+                    </div>
+                    <p class="text-gray-700">We understand electrical issues can't wait. That's why we offer same-day
+                        service for emergencies and quick scheduling for all other residential electrical needs. Our
+                        team arrives on time and works efficiently.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-hand-holding-usd text-blue-900 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900">Fair Pricing</h3>
+                    </div>
+                    <p class="text-gray-700">We provide transparent, upfront pricing with no hidden fees. Before any
+                        work begins, you'll receive a detailed estimate. Our rates are competitive, and we offer various
+                        payment options to suit your budget.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Contact Us</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+                <p class="text-gray-700 max-w-2xl mx-auto mt-4">Ready to discuss your residential electrical needs?
+                    Reach out to us today for a free consultation and estimate.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-blue-900 mb-6">Get in Touch</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900">
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 mb-2">Phone</label>
+                                <input type="tel" id="phone"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900">
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="4"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                                <i class="fas fa-paper-plane mr-2"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold text-blue-900 mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-900"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-blue-900">Service Area</h4>
+                                    <!-- Montréal and surrounding areas -->
+                                    <p class="text-gray-700">
+                                    <ul>
+                                        <li>Montréal and surrounding areas</li>
+                                        <li>Laval</li>
+                                        <li>Laurentides</li>
+                                        <li>Lanaudière</li>
+                                        <li>Et aux alentours</li>
+                                    </ul>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-blue-900"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-blue-900">Phone</h4>
+                                    <p class="text-gray-700">
+                                        <a href="tel:5147127930" class="hover:underline">514-712-7930</a><br>
+                                        <a href="tel:4388850597" class="hover:underline">438-885-0597</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-blue-900"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-blue-900">Email: Alexandre Leger</h4>
+                                    <p class="text-gray-700">
+                                        <a href="mailto:info@legattielec.com"
+                                            class="hover:underline">Legattielectrique@outlook.com</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock text-blue-900"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-blue-900">Business Hours</h4>
+                                    <p class="text-gray-700">
+                                        Monday - Friday: 8:00 AM - 6:00 PM<br>
+                                        Saturday: 9:00 AM - 2:00 PM<br>
+                                        Emergency service available 24/7
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
+                        <h2 class="text-xl font-bold">Legatti Électrique</h2>
+                    </div>
+                    <p class="mt-2 text-blue-200">Residential Electrical Services</p>
+                </div>
+
+                <div class="flex space-x-6">
+                    <a href="#" class="text-blue-200 hover:text-white transition">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-blue-200 hover:text-white transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-blue-200 hover:text-white transition">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-blue-800 mt-8 pt-8 flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <p class="text-blue-200">&copy; 2023 Legatti Électrique. All rights reserved.</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
+                    <a href="#" class="text-blue-200 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-blue-200 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-blue-200 hover:text-white transition">Licenses</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle full services list
+        document.getElementById('showMoreBtn').addEventListener('click', function () {
+            const fullServices = document.getElementById('fullServices');
+            if (fullServices.classList.contains('hidden')) {
+                fullServices.classList.remove('hidden');
+                this.innerHTML = '<i class="fas fa-chevron-up mr-2"></i> Hide Service List';
+            } else {
+                fullServices.classList.add('hidden');
+                this.innerHTML = '<i class="fas fa-list-ul mr-2"></i> View Complete Service List';
+            }
+        });
+
+        // Mobile menu toggle would go here
+    </script>
+</body>
+
+</html>
